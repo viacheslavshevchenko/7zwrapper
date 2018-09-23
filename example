@@ -1,0 +1,15 @@
+#!/Users/vshev4enko/erlang/erlang-20.3/bin escript
+%%! -pa ebin
+
+main([String]) ->
+    try
+        Res = '7zwrapper':list(list_to_binary(String)),
+        io:format("Response: ~p",[Res])
+    catch
+        _:E ->
+            io:format("Error: ~p",[E]),
+            halt(1)
+    end;
+main(_) ->
+    halt(1).
+
